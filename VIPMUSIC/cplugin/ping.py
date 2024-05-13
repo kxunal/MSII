@@ -36,7 +36,7 @@ async def ping_clone(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❄ sᴜᴘᴘᴏʀᴛ ❄", url=SUPPORT_CHAT),
+                    InlineKeyboardButton("❄ sᴜᴘᴘᴏʀᴛ ❄", url=f"https://t.me/deathchatting_world"),
                     InlineKeyboardButton(
                         "✨ 𝙰𝙳𝙳 𝙼𝙴✨",
                         url=f"https://t.me/{i.username}?startgroup=true",
