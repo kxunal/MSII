@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+"""from pyrogram import Client, filters
 import requests
 from VIPMUSIC import app
 from time import time
@@ -105,3 +105,4 @@ def get_movie_info(movie_name):
         return info
     else:
         return "Movie not found or API request failed."
+"""
