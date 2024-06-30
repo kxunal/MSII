@@ -167,7 +167,7 @@ async def join_group(client, message):
         return
 
 
-@app.on_message(filters.command("userbotleave") & filters.group & admin_filter)
+"""@app.on_message(filters.command("userbotleave") & filters.group & admin_filter)
 async def leave_one(client, message):
     try:
         userbot = await get_assistant(message.chat.id)
@@ -209,3 +209,4 @@ async def leave_all(client, message):
             message.chat.id,
             f"**✅ ʟᴇғᴛ ғʀᴏᴍ:* {left} chats.\n**❌ ғᴀɪʟᴇᴅ ɪɴ:** {failed} chats.",
         )
+"""
