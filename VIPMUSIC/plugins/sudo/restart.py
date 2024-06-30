@@ -44,7 +44,7 @@ async def make_carbon(code):
 
 
 # Modify the existing code...
-@app.on_callback_query(filters.regex(r"refresh_logs"))
+"""@app.on_callback_query(filters.regex(r"refresh_logs"))
 async def handle_refresh_logs(_, query: CallbackQuery):
     try:
         # Read the content of the log file
@@ -92,12 +92,12 @@ async def log_(client, message, _):
         )
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"An error occurred: {e}")"""
 
 
 @app.on_message(
     filters.command(
-        ["getlog", "logs", "getlogs"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
+        ["getlog", "logs", "getlogs"], prefixes=["/"]
     )
     & SUDOERS
 )
@@ -110,7 +110,7 @@ async def log_(client, message, _):
 
 
 @app.on_message(
-    filters.command(["update", "up"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
+    filters.command(["update", "up"], prefixes=["/"])
     & SUDOERS
 )
 @language
@@ -272,4 +272,4 @@ async def restart_(_, message):
     await response.edit_text(
         "» ʀᴇsᴛᴀʀᴛ ᴘʀᴏᴄᴇss sᴛᴀʀᴛᴇᴅ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ғᴏʀ ғᴇᴡ sᴇᴄᴏɴᴅs ᴜɴᴛɪʟ ᴛʜᴇ ʙᴏᴛ sᴛᴀʀᴛs..."
     )
-    os.system(f"kill -9 {os.getpid()} && bash start")
+    os.system(f"kill -9 {os.getpid()} && bash start.sh")
