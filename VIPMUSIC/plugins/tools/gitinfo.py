@@ -1,4 +1,4 @@
-import aiohttp
+"""import aiohttp
 from pyrogram import filters
 from VIPMUSIC import app
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -58,3 +58,4 @@ async def github(_, message):
     await message.reply_photo(
         photo=avatar_url, caption=caption, reply_markup=inline_keyboard
     )
+"""
