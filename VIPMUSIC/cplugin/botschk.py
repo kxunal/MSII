@@ -1,4 +1,4 @@
-import asyncio
+"""import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from dotenv import load_dotenv
@@ -53,4 +53,4 @@ async def check_bots_command(client, message):
             )
     except Exception as e:
         await message.reply_text(f"An error occurred: {e}")
-        print(f"Error occurred during /botschk command: {e}")
+        print(f"Error occurred during /botschk command: {e}")"""
