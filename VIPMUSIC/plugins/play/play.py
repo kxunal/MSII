@@ -1,17 +1,20 @@
-import os
+import asyncio
+import os, sys
 import random
 import string
-import asyncio
-from pyrogram import client, filters
+from time import time
+
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from VIPMUSIC.utils.database import get_assistant
+
 import config
+from config import BANNED_USERS, lyrical
 from VIPMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from VIPMUSIC.core.call import VIP
-from VIPMUSIC.misc import SUDOERS
 from VIPMUSIC.utils import seconds_to_min, time_to_seconds
 from VIPMUSIC.utils.channelplay import get_channeplayCB
+from VIPMUSIC.utils.database import add_served_chat
 from VIPMUSIC.utils.decorators.language import languageCB
 from VIPMUSIC.utils.decorators.play import PlayWrapper
 from VIPMUSIC.utils.formatters import formats
@@ -22,18 +25,7 @@ from VIPMUSIC.utils.inline import (
     slider_markup,
     track_markup,
 )
-from VIPMUSIC.utils.database import (
-    add_served_chat,
-    add_served_user,
-    blacklisted_chats,
-    get_lang,
-    is_banned_user,
-    is_on_off,
-)
 from VIPMUSIC.utils.logger import play_logs
-from config import BANNED_USERS, lyrical
-from time import time
-from VIPMUSIC.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -55,7 +47,7 @@ SPAM_WINDOW_SECONDS = 5
             "cplayforce",
             "cvplayforce",
         ],
-        prefixes=["/"],
+        prefixes=["/", "!", "%", "", "@", "#"],
     )
     & filters.group
     & ~BANNED_USERS
@@ -264,7 +256,7 @@ async def play_commnd(
                 except Exception as e:
                     print(e)
 
-                    os.system(f"kill -9 {os.getpid()} && bash start")
+                    await mystic.edit_text(_["play_3"])
                 streamtype = "youtube"
                 img = details["thumb"]
                 cap = _["play_11"].format(
@@ -322,9 +314,9 @@ async def play_commnd(
             if "album" in url:
                 try:
                     details, track_id = await Apple.track(url)
-                except:
+                except Exception as e:
+                    return
 
-                    os.system(f"kill -9 {os.getpid()} && bash start")
                 streamtype = "youtube"
                 img = details["thumb"]
                 cap = _["play_10"].format(details["title"], details["duration_min"])
@@ -480,7 +472,9 @@ async def play_commnd(
             ex_type = type(e).__name__
             err = e if ex_type == "AssistantErr" else _["general_2"].format(ex_type)
             print(e)
-            return await mystic.edit_text(e)
+            sys.exit()
+            os.system("bash start")
+
         await mystic.delete()
         return await play_logs(message, streamtype=streamtype)
     else:
@@ -764,6 +758,7 @@ from random import randint
 from typing import Union
 
 from pyrogram.types import InlineKeyboardMarkup
+from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from VIPMUSIC import Carbon, YouTube, app
@@ -771,15 +766,9 @@ from VIPMUSIC.core.call import VIP
 from VIPMUSIC.misc import db
 from VIPMUSIC.utils.database import add_active_video_chat, is_active_chat
 from VIPMUSIC.utils.exceptions import AssistantErr
-from VIPMUSIC.utils.inline import (
-    aq_markup,
-    queuemarkup,
-    close_markup,
-    stream_markup,
-)
+from VIPMUSIC.utils.inline import aq_markup, close_markup, stream_markup, stream_markup2
 from VIPMUSIC.utils.pastebin import VIPBin
 from VIPMUSIC.utils.stream.queue import put_queue, put_queue_index
-from youtubesearchpython.__future__ import VideosSearch
 
 
 async def stream(
