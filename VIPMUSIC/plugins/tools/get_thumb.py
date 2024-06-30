@@ -1,4 +1,4 @@
-from pyrogram import filters
+"""from pyrogram import filters
 from VIPMUSIC import app
 import requests
 from bs4 import BeautifulSoup
@@ -47,3 +47,4 @@ async def get_thumbnail_command(client, message):
     except Exception as e:
         await a.edit("An error occurred. Please try again later.")
         print(f"Error: {e}")
+"""
