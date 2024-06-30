@@ -7,18 +7,14 @@ from VIPMUSIC.core.call import VIP
 from VIPMUSIC.misc import db
 from VIPMUSIC.utils.database import get_loop
 from VIPMUSIC.utils.decorators import AdminRightsCheck
-from VIPMUSIC.utils.inline import close_markup, stream_markup, stream_markup2
+from VIPMUSIC.utils.inline import close_markup, stream_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
 
 @app.on_message(
-    filters.command(
-        ["skip", "cskip", "next", "cnext"], prefixes=["/", "!", "%", ",", ".", "@", "#"]
-    )
-    & filters.group
-    & ~BANNED_USERS
+    filters.command(["skip", "cskip", "next", "cnext"]) & filters.group & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
@@ -52,7 +48,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await VIP.stop_stream(chat_id)
+                                    await Anony.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -79,7 +75,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await VIP.stop_stream(chat_id)
+                    return await Anony.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -90,7 +86,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await VIP.stop_stream(chat_id)
+                return await Anony.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -115,10 +111,10 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await VIP.skip_stream(chat_id, link, video=status, image=image)
+            await Anony.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
-        button = stream_markup2(_, chat_id)
+        button = stream_markup(_, chat_id)
         img = await get_thumb(videoid)
         run = await message.reply_photo(
             photo=img,
@@ -148,10 +144,10 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await VIP.skip_stream(chat_id, file_path, video=status, image=image)
+            await Anony.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
-        button = stream_markup(_, videoid, chat_id)
+        button = stream_markup(_, chat_id)
         img = await get_thumb(videoid)
         run = await message.reply_photo(
             photo=img,
@@ -168,10 +164,10 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await VIP.skip_stream(chat_id, videoid, video=status)
+            await Anony.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
-        button = stream_markup2(_, chat_id)
+        button = stream_markup(_, chat_id)
         run = await message.reply_photo(
             photo=config.STREAM_IMG_URL,
             caption=_["stream_2"].format(user),
@@ -190,17 +186,15 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await VIP.skip_stream(chat_id, queued, video=status, image=image)
+            await Anony.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
-            button = stream_markup2(_, chat_id)
+            button = stream_markup(_, chat_id)
             run = await message.reply_photo(
-                photo=(
-                    config.TELEGRAM_AUDIO_URL
-                    if str(streamtype) == "audio"
-                    else config.TELEGRAM_VIDEO_URL
-                ),
+                photo=config.TELEGRAM_AUDIO_URL
+                if str(streamtype) == "audio"
+                else config.TELEGRAM_VIDEO_URL,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                 ),
@@ -209,13 +203,11 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
         elif videoid == "soundcloud":
-            button = stream_markup2(_, chat_id)
+            button = stream_markup(_, chat_id)
             run = await message.reply_photo(
-                photo=(
-                    config.SOUNCLOUD_IMG_URL
-                    if str(streamtype) == "audio"
-                    else config.TELEGRAM_VIDEO_URL
-                ),
+                photo=config.SOUNCLOUD_IMG_URL
+                if str(streamtype) == "audio"
+                else config.TELEGRAM_VIDEO_URL,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                 ),
@@ -224,7 +216,7 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
         else:
-            button = stream_markup(_, videoid, chat_id)
+            button = stream_markup(_, chat_id)
             img = await get_thumb(videoid)
             run = await message.reply_photo(
                 photo=img,
