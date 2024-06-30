@@ -20,11 +20,11 @@ from config import LOGGER_ID
 CLONES = set()
 
 
-@app.on_message(filters.command("clone") & SUDOERS)
+@app.on_message(filters.command("cl") & SUDOERS)
 async def clone_txt(client, message):
     userbot = await get_assistant(message.chat.id)
     if len(message.command) > 1:
-        bot_token = message.text.split("/clone", 1)[1].strip()
+        bot_token = message.text.split("/cl", 1)[1].strip()
         mi = await message.reply_text("Please wait while I process the bot token.")
         try:
             ai = Client(
