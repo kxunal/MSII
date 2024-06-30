@@ -30,7 +30,7 @@ def private_panel(_):
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),             
         ],
         [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),   
+            InlineKeyboardButton(text=_["S_B_11"], user_id=config.OWNER_ID),   
             InlineKeyboardButton(
                 text=_["S_B_10"],
                 url=f"https://t.me/StormChatter_bot?startgroup=true&admin=delete_messages+invite_users",
