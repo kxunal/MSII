@@ -16,11 +16,11 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 999999))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID"))
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001443337704"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002064111110"))
 
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID"))
@@ -33,21 +33,21 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/TryToLiveAlon/VIP-MUSIC",
+    "https://github.com/VARC9210/MUSICC",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/deathking_botworld")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/deathchatting_world")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/STORM_TECHH")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/STORM_CHATZ")
 
 # Maximum Limit Allowed for users to save playlists on bot's server
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "100"))
+SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "10000"))
 
 # MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "100"))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "10000"))
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = False
 
@@ -114,21 +114,21 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://mallucampaign.in/images/img_1715526864.jpg"
+    "START_IMG_URL", "https://graph.org/file/9077cd2ba5818efef2d28.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://mallucampaign.in/images/img_1715526864.jpg"
+    "PING_IMG_URL", "https://graph.org/file/eb1e2b58e17964083db73.jpg"
 )
-PLAYLIST_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-STATS_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-TELEGRAM_AUDIO_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-TELEGRAM_VIDEO_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-STREAM_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-SOUNCLOUD_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-YOUTUBE_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://mallucampaign.in/images/img_1715526864.jpg"
+PLAYLIST_IMG_URL = "https://graph.org/file/3e1a29249c83104c035af.jpg"
+STATS_IMG_URL = "https://graph.org/file/d25964cfe010199e16273.jpg"
+TELEGRAM_AUDIO_URL = "https://graph.org/file/ebc1cd4853f51d4fd7cdb.jpg"
+TELEGRAM_VIDEO_URL = "https://graph.org/file/948c175c8bfb3d96080ad.jpg"
+STREAM_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
+SOUNCLOUD_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
+YOUTUBE_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
 
 
 def time_to_seconds(time):
