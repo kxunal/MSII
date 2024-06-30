@@ -1,4 +1,4 @@
-import requests
+"""import requests
 import random
 from VIPMUSIC import app, userbot
 from VIPMUSIC.misc import SUDOERS
@@ -142,3 +142,4 @@ async def restriction_app(app: app, message):
                     ),
                 )
                 await message.reply("demoted !")
+"""
