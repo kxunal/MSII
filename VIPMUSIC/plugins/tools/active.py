@@ -95,7 +95,7 @@ async def activevi_(_, message: Message):
                 text += (
                     f"<b>{j + 1}.</b> {unidecode(title).upper()} [<code>{x}</code>]\n"
                 )
-            button_text = f"๏ ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ ๏"
+            button_text = f"ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ"
             buttons.append([InlineKeyboardButton(button_text, url=invite_link)])
             j += 1
         except:
@@ -115,8 +115,8 @@ async def start(client: Client, message: Message):
     ac_audio = str(len(await get_active_chats()))
     ac_video = str(len(await get_active_video_chats()))
     await message.reply_text(
-        f"✫ <b><u>ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs ɪɴғᴏ</u></b> :\n\nᴠᴏɪᴄᴇ : {ac_audio}\nᴠɪᴅᴇᴏ  : {ac_video}",
+        f"<b><u>ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs ɪɴғᴏ</u></b> :\n\nᴠᴏɪᴄᴇ : {ac_audio}\nᴠɪᴅᴇᴏ  : {ac_video}",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("✯ ᴄʟᴏsᴇ ✯", callback_data=f"close")]]
+            [[InlineKeyboardButton("ᴄʟᴏsᴇ 🍂", callback_data=f"close")]]
         ),
     )
