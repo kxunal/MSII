@@ -131,10 +131,7 @@ def stream_markup(_, videoid, user_id, chat_id):
             ),
         ],
         [
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            ),
+            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
         ],
     ]
 
