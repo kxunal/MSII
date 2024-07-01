@@ -59,3 +59,5 @@ youtube-search-python
 google
 MukeshAPI
 googlesearch-python
+flask_restful
+flask
