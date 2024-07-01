@@ -123,11 +123,11 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="II",
+                text="II ᴘᴀᴜsᴇ",
                 callback_data=f"ADMIN Pause|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="▷", callback_data=f"ADMIN Resume|{chat_id}"
+                text="▷ ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"
             ),
         ],
         [
@@ -486,7 +486,7 @@ def panel_markup_3(_, videoid, chat_id):
     return buttons
 
 
-def panel_markup_4(_, vidid, chat_id, played, dur, user_id):
+def panel_markup_4(_, vidid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
@@ -537,10 +537,7 @@ def panel_markup_4(_, vidid, chat_id, played, dur, user_id):
             ),
         ],
         [
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            ),
+            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
         ],
     ]
 
