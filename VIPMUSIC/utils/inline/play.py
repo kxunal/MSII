@@ -7,7 +7,7 @@ from VIPMUSIC.utils.formatters import time_to_seconds
 from VIPMUSIC import app
 
 
-def track_markup(_, user_id, channel, fplay):
+def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -42,7 +42,7 @@ def track_markup(_, user_id, channel, fplay):
     return buttons
 
 
-def stream_markup_timer(_, videoid, chat_id, played, dur):
+def stream_markup_timer(_, videoid, chat_id, user_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
@@ -104,7 +104,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     return buttons
 
 
-def stream_markup(_, videoid, chat_id):
+def stream_markup(_, videoid, chat_id, user_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -231,7 +231,7 @@ def telegram_markup(_, chat_id):
 ## Queue Markup
 
 
-def queue_markup(_, videoid, chat_id):
+def queue_markup(_, videoid, chat_id, user_id):
 
     buttons = [
         [
@@ -489,7 +489,7 @@ def panel_markup_3(_, videoid, chat_id):
     return buttons
 
 
-def panel_markup_4(_, vidid, chat_id, played, dur):
+def panel_markup_4(_, vidid, chat_id, played, dur, user_id):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
