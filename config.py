@@ -114,13 +114,13 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/9077cd2ba5818efef2d28.jpg"
+    "START_IMG_URL", "https://graph.org/file/8cbea013cc7cf663eb8fe.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://graph.org/file/eb1e2b58e17964083db73.jpg"
+    "PING_IMG_URL", "https://graph.org/file/9077cd2ba5818efef2d28.jpg"
 )
-PLAYLIST_IMG_URL = "https://graph.org/file/3e1a29249c83104c035af.jpg"
-STATS_IMG_URL = "https://graph.org/file/d25964cfe010199e16273.jpg"
+PLAYLIST_IMG_URL = "https://graph.org/file/eb1e2b58e17964083db73.jpg"
+STATS_IMG_URL = "https://graph.org/file/3e1a29249c83104c035af.jpg"
 TELEGRAM_AUDIO_URL = "https://graph.org/file/ebc1cd4853f51d4fd7cdb.jpg"
 TELEGRAM_VIDEO_URL = "https://graph.org/file/948c175c8bfb3d96080ad.jpg"
 STREAM_IMG_URL = "https://graph.org/file/e8311d4fff8527c550185.jpg"
