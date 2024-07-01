@@ -104,7 +104,7 @@ def stream_markup_timer(_, videoid, chat_id, user_id, played, dur):
     return buttons
 
 
-def stream_markup(_, videoid, user_id, chat_id):
+def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
