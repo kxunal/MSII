@@ -78,6 +78,9 @@ def aq_markup(_, chat_id):
                 text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"
             ),
         ],
+        [
+            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
+        ],        
     ]
     return buttons
 
@@ -107,6 +110,9 @@ def queuemarkup(_, vidid, chat_id):
                 text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"
             ),
         ],
+        [
+            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
+        ],        
     ]
 
     return buttons
